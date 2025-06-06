@@ -11,21 +11,21 @@
       "use": "@vercel/python"
     },
     {
-      "src": "frontend/**", // <--- KEMBALIKAN KE INI
+      "src": "frontend/**", 
       "use": "@vercel/static",
       "config": {
         "distDir": "frontend"
       }
     }
   ],
-  "routes": [              // <--- BAGIAN INI SANGAT PENTING
+  "routes": [            
     {
       "src": "/api/(.*)",
       "dest": "/backend/api/$1"
     },
     {
       "src": "/(.*)",
-      "dest": "/frontend/index.html" // <--- Ini akan menyajikan index.html sebagai root
+      "dest": "/frontend/index.html"
     }
   ]
 }
