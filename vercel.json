@@ -11,10 +11,10 @@
       "use": "@vercel/python"
     },
     {
-      "src": "frontend/index.html", // <--- Ubah ini: target langsung index.html
-      "use": "@vercel/static",       // <--- Ubah ini: gunakan @vercel/static
+      "src": "frontend/index.html",
+      "use": "@vercel/static",     
       "config": {
-        "distDir": "frontend"       // <--- distDir tetap sama, menunjukkan root statis
+        "distDir": "frontend"       
       }
     }
   ]
