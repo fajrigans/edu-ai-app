@@ -11,11 +11,21 @@
       "use": "@vercel/python"
     },
     {
-      "src": "frontend/index.html",
-      "use": "@vercel/static",     
+      "src": "frontend/**", 
+      "use": "@vercel/static",
       "config": {
-        "distDir": "frontend"       
+        "distDir": "frontend"
       }
+    }
+  ],
+  "routes": [             
+    {
+      "src": "/api/(.*)",
+      "dest": "/backend/api/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/frontend/index.html" 
     }
   ]
 }
