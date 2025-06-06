@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>AI Edukasi - Identifikasi Tanaman</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>AI Edukasi</h1>
+        <div class="camera-container">
+            <video id="cameraFeed" playsinline autoplay></video>
+            <canvas id="cameraCanvas" style="display: none;"></canvas>
+            <div id="loadingOverlay" class="loading-overlay" style="display: none;">
+                <div class="spinner"></div>
+                <p>Menganalisis...</p>
+            </div>
+        </div>
+        <button id="captureButton">IDENTIFIKASI TANAMAN</button>
+        <div id="resultDisplay" class="result-display">
+            <p id="resultText">Arahkan kamera ke tanaman dan tekan tombol.</p>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
