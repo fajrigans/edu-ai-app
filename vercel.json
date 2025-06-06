@@ -3,14 +3,6 @@
     {
       "source": "/api/(.*)",
       "destination": "/backend/api/$1"
-    },
-    {
-      "source": "/", // <-- Jika request ke root
-      "destination": "/frontend/index.html" // <-- Sajikan index.html dari frontend
-    },
-    {
-      "source": "/(.*)", // <-- Untuk semua path lainnya
-      "destination": "/frontend/$1" // <-- Sajikan dari folder frontend
     }
   ],
   "builds": [
@@ -19,11 +11,21 @@
       "use": "@vercel/python"
     },
     {
-      "src": "frontend/**", // <-- Kembali ke "frontend/**"
+      "src": "frontend/**", // <--- KEMBALIKAN KE INI
       "use": "@vercel/static",
       "config": {
         "distDir": "frontend"
       }
+    }
+  ],
+  "routes": [              // <--- BAGIAN INI SANGAT PENTING
+    {
+      "src": "/api/(.*)",
+      "dest": "/backend/api/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/frontend/index.html" // <--- Ini akan menyajikan index.html sebagai root
     }
   ]
 }
