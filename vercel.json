@@ -11,14 +11,14 @@
       "use": "@vercel/python"
     },
     {
-      "src": "frontend/**", 
+      "src": "frontend/**", // <--- INI PENTING! HARUS "frontend/**"
       "use": "@vercel/static",
       "config": {
         "distDir": "frontend"
       }
     }
   ],
-  "routes": [            
+  "routes": [              // <--- PASTIKAN BAGIAN "routes" INI ADA DAN LENGKAP
     {
       "src": "/api/(.*)",
       "dest": "/backend/api/$1"
