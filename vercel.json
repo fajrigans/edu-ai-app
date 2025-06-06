@@ -11,21 +11,21 @@
       "use": "@vercel/python"
     },
     {
-      "src": "frontend/**", 
+      "src": "frontend/**", // <--- Pastikan ini "frontend/**"
       "use": "@vercel/static",
       "config": {
         "distDir": "frontend"
       }
     }
   ],
-  "routes": [            
+  "routes": [              // <--- Pastikan bagian "routes" ini ADA
     {
       "src": "/api/(.*)",
       "dest": "/backend/api/$1"
     },
     {
       "src": "/(.*)",
-      "dest": "/frontend/index.html"
+      "dest": "/frontend/index.html" // <--- Dan pastikan aturan ini ADA
     }
   ]
 }
