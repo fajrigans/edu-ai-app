@@ -25,7 +25,7 @@
     },
     {
       "src": "/(.*)",
-      "dest": "/frontend/index.html", "/frontend/script.js", "/frontend/style.css" // <--- Ini akan menyajikan index.html sebagai root
+      "dest": "/frontend/index.html" // <--- Ini akan menyajikan index.html sebagai root
     }
   ]
 }
